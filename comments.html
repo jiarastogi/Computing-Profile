@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Comments</title>
+        <link rel="stylesheet" href="websystems.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="header">
+            <div class="container menu">
+                <a href="index.html">Home Page</a>
+                <a href="past.html">My Past</a>
+                <a href="future.html">My Future</a>
+                <a class="header_current" href="comments.html">Comments</a>
+            </div>
+        </div>
+
+        <div class="main-block" id="comments">
+            <div class="container">
+                <h1>Comments</h1>
+                <p>This is a complete explanation of how I have created this website including the overall structure, the internal structure, the CSS styles, graphic design elements and how the &lt;alt&gt; tag is used. I've explained this clearly using unordered lists, ordered lists, diagrams and tables to show the logic and execution of the HTML and CSS behind this website. I've aimed to break it down as much as possible to make it understandable by anyone. 
+                </p>
+            </div>
+        </div>
+
+        <div class="white-block">
+            <div class="container">
+                <h2>Overall Structure</h2>
+                <p>There are 4 main pages:
+                </p>
+                 <ul>
+                    <li>The <b>home page</b> which acts as the main page with all links. This page's file name is index.html.</li>
+                    <li>A page about <b>my past</b> experiences with computing. The file name is past.html.</li>
+                    <li>A webpage for <b>my future</b> aspirations and career, especially with computing. The file name for this page is future.html.</li>
+                    <li>A page with <b>comments</b> explaining the structure and how this website is built. The name of the file for this is comments.html.</li>
+                </ul>
+                <p>These pages are all connected with a consistent navigation menu placed at the top of each page, allowing the users to easily access each page. The home page acts as the main entry point, whereas the rest of the pages have in-depth information. Additionally, there is a small callout block at the end of each page with the phrasing <i>"Finished Reading? Go back to the Home Page here."</i> This provides the user with a direct way to go back to the home page with ease.
+                <br><br>The overall structure is designed to allow the users to access each page step by step or jump to whatever section they need.  
+                </p>
+           </div>
+        </div>
+
+        <div class="grey-block">
+            <div class="container">
+                <div class="half">
+                    <div>
+                        <h2>Internal Structure</h2>
+                        <p>Each page has a clear internal structure, which is similar for each page to improve usability and readability. Even though the main content blocks change according to the page's length and purpose, the surrounding structure remains similar. This creates a predictable experience for the users, as they can quickly recognise the links, navigation, main content and heading.
+                            <br><br>Using the same layout on each page improves usability as the user quickly understands how to access the important information. The consistency also supports the visual identity of the site, making all pages feel connected as one complete website. 
+                            <br><br>To visualise this better, I've created a diagram, shown on the left, to highlight the overall structure of each internal page. This structure includes:
+                        </p>
+                    </div>
+                    <!-- Diagram created by me -->
+                    <img src="images/internal-layout.png" id="internal-layout-img" title="A complete diagram of the internal layout of each webpage, including Header, Hero Block, Content Blocks, Call-Out and Footer" alt="A complete diagram of the internal layout of each webpage, including Header, Hero Block, Content Blocks, Call-Out and Footer">
+                </div>
+                <ol>
+                    <li><b>Header:</b> this  contains the navigation with the links to all webpages, allowing for easy access.</li>
+                    <li><b>Hero Banner Block:</b> this block uses an image as the background with a dark overlay and clear heading text to introduce the page. It also includes a little blurb of the page's content.</li>
+                    <li><b>Content Blocks:</b> these blocks alternate between a white background and a light blue background. This creates visual blocks within the page, adding structure to the content by breaking it up.
+                        <ul>
+                            <li><b>Images:</b> Some of these blocks include images which are put on the right side of the block.</li>
+                            <li><b>Tables:</b> There is also a table below that uses heading, rows and columns, using the &lt;table&gt; html tags.</li>
+                            <li><b>Links:</b> Using the &lt;a&gt; html tag, there are also multiple links to relevant pages to the content. These include links to the four pages on this website, and also external links.</li>
+                        </ul>
+                    </li>
+                    <li><b>Call-Out Block:</b> this block includes a clear callout link back to the Home Page.</li>
+                    <li><b>Footer:</b> the block contains copyright notice and contact details, which the users can simply retrieve if needed.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="white-block">
+            <div class="container">
+                <h2>The CSS Styles I used</h2>
+                <p>I have used a range of CSS styles that range from class, ID and element selectors. I also use a descendant combinator selector type, which selects a certain element within a class (e.g. changing the h2 element, only for the cta class). While there are a lot of CSS Styles, this allows me to design each element carefully, giving me no restrictions on how it looks. Below is a summary of each selector, the type of selector, what the style does and where it was used.
+                </p>
+                <table>
+                      <colgroup>
+                        <col id="col_one">
+                        <col id="col_two">
+                        <col id="col_three">
+                        <col id="col_four">
+                    </colgroup>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Type of Selector</th>
+                        <th>What the style does</th>
+                        <th>Where it's used</th>
+                    </tr>
+                    <tr>
+                        <td>.container</td>
+                        <td>class</td>
+                        <td>Applies 70% width, centres the container horizontally and applies 0 margins</td>
+                        <td>For each block of content, creating a gap from the edge of the page and the content</td>
+                    </tr>
+                    <tr>
+                        <td>.grey-block</td>
+                        <td>class</td>
+                        <td>Applies a light blue background and 30px top and bottom padding</td>
+                        <td>For the blocks of main content to apply a visual break</td>
+                    </tr>
+                    <tr>
+                        <td>.white-block</td>
+                        <td>class</td>
+                        <td>Applies a white background and 30px top and bottom padding</td>
+                        <td>For the blocks of main content to apply a visual break</td>
+                    </tr>
+                    <tr>
+                        <td>.header</td>
+                        <td>class</td>
+                        <td>Applies a dark blue background with a 20px padding on the top and bottom</td>
+                        <td>For the navigation block at the top of each page</td>
+                    </tr>
+                    <tr>
+                        <td>.main-block</td>
+                        <td>class</td>
+                        <td>Applies a 100px top and bottom padding, with a white foreground colour. It applies how the background will be seen: no repeats in the image and with a size set to 'cover' so there is no extra space</td>
+                        <td>For each of the hero banner blocks on each page</td>
+                    </tr>
+                    <tr>
+                        <td>#main</td>
+                        <td>ID</td>
+                        <td>Applies a background of an image with a gradient overlay</td>
+                        <td>Only for the hero banner block on the Home Page</td>
+                    </tr>
+                    <tr>
+                        <td>#past</td>
+                        <td>ID</td>
+                        <td>Applies a background of an image with a gradient overlay</td>
+                        <td>Only for the hero banner block on the 'My Past' Page</td>
+                    </tr>
+                    <tr>
+                        <td>#future</td>
+                        <td>ID</td>
+                        <td>Applies a background of an image with a gradient overlay</td>
+                        <td>Only for the hero banner block on the 'My Future' Page</td>
+                    </tr>
+                    <tr>
+                        <td>#comments</td>
+                        <td>ID</td>
+                        <td>Applies a background of an image with a gradient overlay</td>
+                        <td>Only for the hero banner block on the 'Comments' Page</td>
+                    </tr>
+                    <tr>
+                        <td>.half</td>
+                        <td>class</td>
+                        <td>Applies a flex layout, vertically centres the items, spaces them across the row using space-between, and adds a 20px gap between them.</td>
+                        <td>For the content blocks which have two objects next to each other </td>
+                    </tr>
+                    <tr>
+                        <td>.cta</td>
+                        <td>class</td>
+                        <td>Applies a dark blue background, with a 20px top and bottom padding</td>
+                        <td>For the callout blocks at the bottom of the pages to link back to the Home Page</td>
+                    </tr>
+                    <tr>
+                        <td>.footer</td>
+                        <td>class</td>
+                        <td>To set a dark grey background with a 20px top and bottom padding, and applying a white colour on the foreground object (the text)</td>
+                        <td>For the footers at the bottom of all pages</td>
+                    </tr>
+                    <tr>
+                        <td>img</td>
+                        <td>element</td>
+                        <td>Applies a 20px margin to the right and left, sets the max width to 100% and adds a box shadow</td>
+                        <td>For all images (excluding background images)</td>
+                    </tr>
+                    <tr>
+                        <td>#profile-img</td>
+                        <td>ID</td>
+                        <td>Sets the max width to 25%</td>
+                        <td>For the profile picture of Jia on the Home Page</td>
+                    </tr>
+                    <tr>
+                        <td>#palette-img</td>
+                        <td>ID</td>
+                        <td>Sets the max width to 75%</td>
+                        <td>For the picture of the colour palette used near the bottom of the Comments Page</td>
+                    </tr>
+                    <tr>
+                        <td>#computer-img</td>
+                        <td>ID</td>
+                        <td>Sets the max width to 45%</td>
+                        <td>For the picture of technologies' uses near the bottom of My Future Page</td>
+                    </tr>
+                    <tr>
+                        <td>#internal-layout-img</td>
+                        <td>ID</td>
+                        <td>Sets the max width to 40%</td>
+                        <td>For the picture of the internal layout diagram near the top of the Comments Page</td>
+                    </tr>
+                    <tr>
+                        <td>body</td>
+                        <td>element</td>
+                        <td><ul>
+                                <li>Applies a 0 padding and margin, to remove extra white space</li>
+                                <li>Applies <i>'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif</i> font style to all text</li>
+                                <li>Makes the text height to 150% for all text</li>
+                                <li>Sets the colour of all text to dark grey (so it's not a harsh black)</li>
+                            </ul>
+                        </td>
+                        <td>To define a consistent style for the entire content of all pages</td>
+                    </tr>
+                    <tr>
+                        <td>h1</td>
+                        <td>element</td>
+                        <td>Sets font size to 35px, changes colour to white and increases line height to 150%</td>
+                        <td>For the headings in the hero main block on all pages</td>
+                    </tr>
+                    <tr>
+                        <td>h2</td>
+                        <td>element</td>
+                        <td>Sets font size to 20px and changes colour to dark blue </td>
+                        <td>For the headings of each content block</td>
+                    </tr>
+                    <tr>
+                        <td>b</td>
+                        <td>element</td>
+                        <td>Applies a font weight of 600</td>
+                        <td>For all text that is bold</td>
+                    </tr>
+                    <tr>
+                        <td>a</td>
+                        <td>element</td>
+                        <td>Applies a color of dark blue and a font weight of 600</td>
+                        <td>For all text that has a link with the &lt;a&gt; tag</td>
+                    </tr>
+                    <tr>
+                        <td>span</td>
+                        <td>element</td>
+                        <td>Applies a color of light blue</td>
+                        <td>For the span text in Home Page</td>
+                    </tr>
+                    <tr>
+                        <td>.menu</td>
+                        <td>class</td>
+                        <td>Arranges the text items in a single row, with a 40px gap in between, and aligns it to the right</td>
+                        <td>For the text in the header block at the top of each page</td>
+                    </tr>
+                    <tr>
+                        <td>.menu a</td>
+                        <td>descendant combinator</td>
+                        <td>Changes the text colour to light blue with no text decoration (no underline)</td>
+                        <td>The links with &lt;a&gt; tag in the header block at the top of each page</td>
+                    </tr>
+                    <tr>
+                        <td>.header_current</td>
+                        <td>class</td>
+                        <td>Changes the text colour to white, with a 700 font weight and no text decoration (no underline)</td>
+                        <td>Applied to the current page link in the menu. (e.g. if the user is on the Home Page, then this class styling is applied to the Home Page link in the navigation)</td>
+                    </tr>
+                    <tr>
+                        <td>.cta h2</td>
+                        <td>descendant combinator</td>
+                        <td>Makes the text colour light blue (instead of dark blue)</td>
+                        <td>In the h2 text in the callout block at the bottom of each page, which has a dark blue background</td>
+                    </tr>
+                    <tr>
+                        <td>.cta_link</td>
+                        <td>class</td>
+                        <td>Makes the link coloured to white</td>
+                        <td>In the callout block at the bottom of each page, which has a dark blue background</td>
+                    </tr>
+                    <tr>
+                        <td>ul</td>
+                        <td>element</td>
+                        <td>Removes all margin on the top and bottom</td>
+                        <td>For all unordered lists</td>
+                    </tr>
+                    <tr>
+                        <td>ol</td>
+                        <td>element</td>
+                        <td>Removes all margin on the top and bottom</td>
+                        <td>For all ordered lists</td>
+                    </tr>
+                    <tr>
+                        <td>table</td>
+                        <td>element</td>
+                        <td>Removes distance between cells so the borders are adjacent to each other</td>
+                        <td>For styling applied to the entire table</td>
+                    </tr>
+                    <tr>
+                        <td>th</td>
+                        <td>element</td>
+                        <td><ul>
+                                <li>Applies padding of 10px on top and bottom, and 20px on left and right.</li>
+                                <li>Makes the text left aligned.</li>
+                                <li>Adds a thick bottom border, defines dark blue text colour and applies a light blue background colour.</li>
+                            </ul>
+                        </td>
+                        <td>For the header row of this table</td>
+                    </tr>
+                    <tr>
+                        <td>td</td>
+                        <td>element</td>
+                        <td>Applies padding of 10px on top and bottom, and 20px on left and right. Adds a small dark blue bottom border</td>
+                        <td>For the data rows of this table</td>
+                    </tr>
+                    <tr>
+                        <td>#col_one</td>
+                        <td>ID</td>
+                        <td>Sets width to 10%</td>
+                        <td>Only for the first column in the table</td>
+                    </tr>
+                    <tr>
+                        <td>#col_two</td>
+                        <td>ID</td>
+                        <td>Sets width to 10%</td>
+                        <td>Only for the second column in the table</td>
+                    </tr>
+                    <tr>
+                        <td>#col_three</td>
+                        <td>ID</td>
+                        <td>Sets width to 40%</td>
+                        <td>Only for the third column in the table</td>
+                    </tr>
+                    <tr>
+                        <td>#col_four</td>
+                        <td>ID</td>
+                        <td>Sets width to 40%</td>
+                        <td>Only for the fourth column in the table</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="grey-block">
+            <div class="container">
+                <h2>Graphic Design Elements</h2>
+                <p>The graphic design of my website was based on keeping the layout simple, readable and consistent throughout the entire page.
+                </p>
+
+                <h3>Overall Layout</h3>
+                <p>I used a structured layout of clear blocks with spacing, and a repeated navigation so the user can move through the site easily. Each page has a similar internal structure for consistency and making the entire website easier to understand. Images were used carefully to enhance the quality of the content, without overwhelming the page. I ensured there was whitespace through margins to prevent the layouts looking crowded. 
+                </p>
+
+                <h3>Colours Used</h3>
+                <p>I chose a limited colour palette using shades of blue, white, and dark grey:
+                </p>
+                <!-- Image created by me -->
+                <img src="images/palette.png" id="palette-img" title="The colour palette used in the website, containing five colours: #ffffff, #e8f1fa, #3b6ea5, #243a5e, #2b2b2b" alt="The colour palette used in the website, containing five colours: #ffffff, #e8f1fa, #3b6ea5, #243a5e, #2b2b2b">
+                <p>Blue was used as the main accent colour, because Blue represents trust and other positive feelings and it's my favourite colour. It creates a clean and professional appearance, while the white and light blue backgrounds help keep the content easy to read. The dark grey was used against the light backgrounds to maintain strong contrast. I ensured to keep the colour combinations high contrast so they wouldn't be hard to read, and focused on a balanced and simple design. Therefore, I also used a colour overlay on the main hero blocks to ensure there is high contrast between the colours.
+                </p>
+
+                <h3>Typefaces used</h3>
+                <p>The typeface used throughout the website is a sans-serif font stack: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, and sans-serif. I chose this because sans-serif fonts are easy to read and are known to suit a modern style of a website. To ensure a clear visual hierarchy of h1, h2, p etc., I used different heading sizes, font colours and font weights to create that hierarchy. Large headings help divide the content into sections, while the paragraph text is used to remain consistent and readable for larger amounts of text content.
+                </p>
+            </div>
+        </div>
+        
+        <div class="white-block">
+            <div class="container">
+                <h2>Using the Alt Text</h2>
+                <p>The alt attribute was used on images to provide text descriptions of the image content. This is important for accessibility as it allows screen readers to describe the image to users who may not be able to see it. Also, if the image fails to load, the user can still understand what the image was intended to show. For this reason, I used alt text to describe each image in a meaningful way. 
+                </p>
+            </div>
+        </div>
+
+        <div class="grey-block">
+            <div class="container">
+                <h2>What happens when CSS is turned off?</h2>
+                <p>The website is also designed to remain usable when CSS is turned off. Without CSS, the webpages lose their colours, spacing, and visual styling, which removes most aesthetics. However, the content still appears in a logical order, because the HTML structure is clear. This includes headings, paragraphs, lists, tables and links still function properly. So, the user can still read the information and navigate between pages. 
+                    <br><br>Unfortunately, the site looks much more basic without CSS, but it remains functional and accessible. This shows that the website does not rely only on styling for usability, but also on well-organised HTML.
+                </p>
+            </div>
+        </div>
+        
+        <div class="cta">
+            <div class="container">
+                <h2>Finished Reading? Go back to the Home Page <a href="index.html" class="cta_link">here</a>.</h2>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="half">
+                    <p>Contact Details: jia.rastogi@student.uts.edu.au</p>
+                    <p>© Jia Rastogi 2026</p>
+                </div>
+            </div>
+        </div>
+                        
+    </body>
+</html>
