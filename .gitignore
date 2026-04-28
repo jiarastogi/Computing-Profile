@@ -1,0 +1,61 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+.project
+.settings/
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies (in case tooling is added later)
+node_modules/
+bower_components/
+.pnpm-store/
+
+# Build / output directories
+dist/
+build/
+.cache/
+.parcel-cache/
+.tmp/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Backup / temp files
+*.bak
+*.tmp
+*.orig
