@@ -29,7 +29,24 @@
 }
 
 #main{
-    background-image: 
+    background-image:
+        linear-gradient(rgba(36, 58, 94, 0.5), rgba(36, 58, 94, 0.9)),
+        url('images/flowers.jpg');
+}
+
+/* Hero section (renamed from .main-block / #main on the home page).
+   Mirrors the .main-block rules above so the layout looks identical. */
+.hero{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top:100px;
+    padding-bottom:100px;
+    color:#FFFFFF;
+}
+
+#hero{
+    background-image:
         linear-gradient(rgba(36, 58, 94, 0.5), rgba(36, 58, 94, 0.9)),
         url('images/flowers.jpg');
 }
@@ -122,6 +139,8 @@ span{
     display: flex;
     gap: 40px;
     justify-content: flex-end;
+    list-style: none;   /* removes bullets when .menu is on a <ul> */
+    padding-left: 0;    /* removes the default left indent on <ul> */
 }
 
 .menu a {
@@ -173,4 +192,68 @@ td{
 #col_three {width:40%;}
 #col_four {width:40%;}
 
+/*Project Cards*/
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: #FFFFFF;
+    border: 1px solid #D2E2F1;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.project-card h3 a {
+    text-decoration: none;
+}
+
+.project-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.badge {
+    background-color: #D2E2F1;
+    color: #3b6ea5;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+}
+
+.project-lang {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0;
+}
+
+.lang-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.lang-php {background-color: #4F5D95;}
+.lang-html {background-color: #e34c26;}
+.lang-python {background-color: #3572A5;}
 
