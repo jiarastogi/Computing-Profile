@@ -1,3 +1,82 @@
+/* ==========================================================
+   Colour palette — change a value here and it updates everywhere.
+   ========================================================== */
+:root {
+    /* Main palette (from the site's design brief) */
+    --color-navy:        #243A5E;   /* headers, headings */
+    --color-light-blue:  #D2E2F1;   /* soft backgrounds, accents */
+    --color-medium-blue: #3b6ea5;   /* links, CTAs, table accents */
+    --color-dark-grey:   #2b2b2b;   /* body text, footer */
+    --color-white:       #FFFFFF;   /* clean backgrounds */
+
+    /* Navy at different opacities, used for the dark gradient
+       overlays on the hero/banner background images.
+       Note: if you change --color-navy above, also update the
+       three rgba values below to match the new RGB. */
+    --color-navy-overlay-50: rgba(36, 58, 94, 0.5);
+    --color-navy-overlay-70: rgba(36, 58, 94, 0.7);
+    --color-navy-overlay-90: rgba(36, 58, 94, 0.9);
+
+    /* GitHub language indicator dots (project cards) */
+    --lang-php:    #4F5D95;
+    --lang-html:   #e34c26;
+    --lang-python: #3572A5;
+
+    /* Semantic colours — named by *purpose*. These map onto the
+       palette above for light mode, and get re-pointed to dark
+       values when the dark-mode toggle is checked (see below).
+       Keeping a separate semantic layer means the palette stays
+       stable while the theme can flip. */
+    --bg-block:       var(--color-white);        /* .white-block, .project-card */
+    --bg-block-alt:   var(--color-light-blue);   /* .grey-block */
+    --bg-header:      var(--color-navy);         /* site header */
+    --bg-footer:      var(--color-dark-grey);    /* site footer */
+
+    --text-body:      var(--color-dark-grey);    /* body copy */
+    --text-heading:   var(--color-navy);         /* h2 */
+    --text-link:      var(--color-medium-blue);  /* anchors */
+    --text-on-dark:   var(--color-white);        /* text sat on dark backgrounds — stays light in both modes */
+    --text-muted:     var(--color-light-blue);   /* nav links, span, cta sub-text */
+
+    --border-soft:    var(--color-light-blue);   /* card border, table cell border */
+}
+
+/* ==========================================================
+   Dark mode — activated when the footer's #dark-toggle
+   checkbox is checked. Uses the modern :has() selector so
+   no JavaScript is required.
+   Note: the toggle only exists on index.html, so the other
+   pages always render in light mode (the :has() rule never
+   matches there).
+   ========================================================== */
+body:has(#dark-toggle:checked) {
+    --bg-block:       #1c2230;
+    --bg-block-alt:   #283649;
+    --bg-header:      #0f1822;
+    --bg-footer:      #050810;
+
+    --text-body:      #e5e7eb;
+    --text-heading:   #c8d6e8;
+    --text-link:      #8fb8e3;
+    /* --text-on-dark stays #FFFFFF — text on dark backgrounds is light in both modes */
+    --text-muted:     #a8b8d0;
+
+    --border-soft:    #3a4a60;
+
+    /* Make hero gradient overlays a touch darker so the image
+       still reads as a moody backdrop in dark mode. */
+    --color-navy-overlay-50: rgba(0, 0, 0, 0.6);
+    --color-navy-overlay-70: rgba(0, 0, 0, 0.75);
+    --color-navy-overlay-90: rgba(0, 0, 0, 0.92);
+}
+
+/* Smooth fade between light and dark when the toggle flips. */
+body,
+.header, .footer, .white-block, .grey-block, .project-card,
+h2, a, th, td {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
 /*Page Background & Width Styling*/
 .container{
     width: 70%;
@@ -10,11 +89,11 @@
     padding-bottom:30px;
 }
 
-.grey-block {background-color:#D2E2F1;}
-.white-block {background-color:#FFFFFF;}
+.grey-block {background-color: var(--bg-block-alt);}
+.white-block {background-color: var(--bg-block);}
 
 .header{
-    background-color:#243A5E;
+    background-color: var(--bg-header);
     padding-top:20px;
     padding-bottom:20px;
 }
@@ -25,12 +104,12 @@
     background-repeat: no-repeat;
     padding-top:100px;
     padding-bottom:100px;
-    color:#FFFFFF;
+    color: var(--text-on-dark);
 }
 
 #main{
     background-image:
-        linear-gradient(rgba(36, 58, 94, 0.5), rgba(36, 58, 94, 0.9)),
+        linear-gradient(var(--color-navy-overlay-50), var(--color-navy-overlay-90)),
         url('images/flowers.jpg');
 }
 
@@ -42,30 +121,30 @@
     background-repeat: no-repeat;
     padding-top:100px;
     padding-bottom:100px;
-    color:#FFFFFF;
+    color: var(--text-on-dark);
 }
 
 #hero{
     background-image:
-        linear-gradient(rgba(36, 58, 94, 0.5), rgba(36, 58, 94, 0.9)),
+        linear-gradient(var(--color-navy-overlay-50), var(--color-navy-overlay-90)),
         url('images/flowers.jpg');
 }
 
 #past{
-    background-image: 
-        linear-gradient(rgba(36, 58, 94, 0.7), rgba(36, 58, 94, 0.9)),
+    background-image:
+        linear-gradient(var(--color-navy-overlay-70), var(--color-navy-overlay-90)),
         url('images/past.png');
 }
 
 #future{
-    background-image: 
-        linear-gradient(rgba(36, 58, 94, 0.7), rgba(36, 58, 94, 0.9)),
+    background-image:
+        linear-gradient(var(--color-navy-overlay-70), var(--color-navy-overlay-90)),
         url('images/computer.png');
 }
 
 #comments{
-    background-image: 
-        linear-gradient(rgba(36, 58, 94, 0.7), rgba(36, 58, 94, 0.9)),
+    background-image:
+        linear-gradient(var(--color-navy-overlay-70), var(--color-navy-overlay-90)),
         url('images/comments.png');
 }
 
@@ -77,16 +156,81 @@
 }
 
 .cta{
-    background-color:#3b6ea5;
+    background-color: var(--color-medium-blue);
     padding-top:20px;
     padding-bottom:20px;
 }
 
 .footer{
-    background-color:#2b2b2b;
+    background-color: var(--bg-footer);
     padding-top:20px;
     padding-bottom:20px;
-    color:#FFFFFF;
+    color: var(--text-on-dark);
+}
+
+/* Dark-mode toggle in the footer — styled as a sliding switch.
+   The native checkbox is kept (for accessibility & no-JS toggling)
+   but the default tickbox look is stripped via `appearance: none`
+   and rebuilt as a track + thumb using a ::before pseudo-element. */
+.dark-toggle{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-on-dark);
+    user-select: none;          /* stops the label text being selected on click */
+}
+
+/* The track */
+.dark-toggle input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    width: 42px;
+    height: 22px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;       /* fully rounded ends */
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+/* The sliding thumb (the white circle) */
+.dark-toggle input[type="checkbox"]::before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s ease;
+}
+
+/* On state — track turns blue, thumb slides right */
+.dark-toggle input[type="checkbox"]:checked{
+    background-color: var(--color-medium-blue);
+}
+.dark-toggle input[type="checkbox"]:checked::before{
+    transform: translateX(20px);
+}
+
+/* Subtle hover lift on the track */
+.dark-toggle:hover input[type="checkbox"]{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.dark-toggle:hover input[type="checkbox"]:checked{
+    background-color: var(--text-link);    /* brighter blue when on + hovered */
+}
+
+/* Visible focus ring for keyboard users */
+.dark-toggle input[type="checkbox"]:focus-visible{
+    outline: 2px solid var(--text-on-dark);
+    outline-offset: 2px;
 }
 
 /*Image Styling*/
@@ -108,18 +252,19 @@ body {
     padding: 0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height:150%;
-    color:#2b2b2b;
+    background-color: var(--bg-block);
+    color: var(--text-body);
 }
 
 h1 {
     font-size:35px;
-    color:#FFFFFF;
+    color: var(--text-on-dark);
     line-height:150%;
 }
 
 h2 {
     font-size:20px;
-    color:#243A5E;
+    color: var(--text-heading);
 }
 
 b{
@@ -127,12 +272,12 @@ b{
 }
 
 a{
-   color:#3b6ea5;
-   font-weight:600; 
+   color: var(--text-link);
+   font-weight:600;
 }
 
 span{
-    color:#D2E2F1;
+    color: var(--text-muted);
 }
 
 .menu {
@@ -144,19 +289,19 @@ span{
 }
 
 .menu a {
-    color: #D2E2F1;
+    color: var(--text-muted);
     text-decoration: none;
 }
 
 
 .header_current{
-    color:#FFFFFF;
+    color: var(--text-on-dark);
     font-weight:700;
     text-decoration:none;
 }
 
-.cta h2{color:#D2E2F1;}
-.cta_link{color:#FFFFFF;}
+.cta h2{color: var(--text-muted);}
+.cta_link{color: var(--text-on-dark);}
 
 ul, ol{
     margin-top:0;
@@ -177,14 +322,14 @@ th, td{
 }
 
 th{
-    background-color: #D2E2F1;
-    color:#3b6ea5;
+    background-color: var(--bg-block-alt);
+    color: var(--text-link);
     text-align:left;
-    box-shadow: inset 0 -4px 0 #3b6ea5; 
+    box-shadow: inset 0 -4px 0 var(--text-link);
 }
 
 td{
-    border-bottom:2px solid #D2E2F1;
+    border-bottom: 2px solid var(--border-soft);
 }
 
 #col_one {width:10%;}
@@ -195,14 +340,28 @@ td{
 /*Project Cards*/
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 20px;
 }
 
+/* Tablets: drop to 2 columns when the viewport is 900px or narrower */
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Phones: stack to 1 column when the viewport is 600px or narrower */
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .project-card {
-    background-color: #FFFFFF;
-    border: 1px solid #D2E2F1;
+    background-color: var(--bg-block);
+    border: 1px solid var(--border-soft);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -229,15 +388,6 @@ td{
     text-decoration: underline;
 }
 
-.badge {
-    background-color: #D2E2F1;
-    color: #3b6ea5;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 2px 10px;
-    border-radius: 12px;
-}
-
 .project-lang {
     font-size: 14px;
     display: flex;
@@ -253,7 +403,6 @@ td{
     border-radius: 50%;
 }
 
-.lang-php {background-color: #4F5D95;}
-.lang-html {background-color: #e34c26;}
-.lang-python {background-color: #3572A5;}
-
+.lang-php {background-color: var(--lang-php);}
+.lang-html {background-color: var(--lang-html);}
+.lang-python {background-color: var(--lang-python);}

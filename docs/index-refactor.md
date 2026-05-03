@@ -1,6 +1,6 @@
 # Refactor notes for `index.html`
 
-The refactored markup lives in `index-refactor.html`. This file explains *what* changed and *why*, so you can read through the reasoning without scrolling past code.
+The refactored markup is now `index.html` itself — the original `index.html` was replaced with the refactored version. This file explains *what* changed and *why*, so you can read through the reasoning without scrolling past code.
 
 ## Changes applied
 
@@ -45,23 +45,53 @@ These two lines are safe additions for the other pages too. Their menus are stil
 
 ## New "My Projects" section
 
-A new section was added between **My Past** and **My Future**, showcasing four GitHub projects in a 2×2 grid. The placement is deliberate — Past explains where I came from, Projects shows what I've built so far, Future explains where I'm going. The grid sits inside a `<section class="white-block" id="projects">` so it reuses the existing white-block styling.
+A new section was added between **My Past** and **My Future**, showcasing four GitHub projects in a responsive 3-column grid. The placement is deliberate — Past explains where I came from, Projects shows what I've built so far, Future explains where I'm going.
+
+Each project link uses `target="_blank"` so the GitHub repo opens in a new tab and the visitor doesn't lose their place on the portfolio. `rel="noopener noreferrer"` is paired with it — that's a small security/performance precaution recommended for any link that opens a new tab to an external site.
+
+### Alternating block colours
+
+The content blocks inside `<main>` now alternate cleanly between white and light blue:
+
+| Section | Background |
+|---|---|
+| My Past | white (`.white-block`) |
+| My Projects | light blue (`.grey-block`) |
+| My Future | white (`.white-block`) |
+| Comments | light blue (`.grey-block`) |
+
+To make this work, **My Future** swapped from `grey-block` to `white-block`, and **Comments** swapped from `white-block` to `grey-block`. The class names `.white-block` / `.grey-block` (the latter is named historically — it's actually light blue `#D2E2F1`) are unchanged.
 
 ### Why each card is an `<article>`
 
-Each project card is wrapped in `<article>`, not `<div>`. An `<article>` represents *self-contained, independently distributable content* — a project description fits exactly: it has its own heading, its own copy, and would still make sense if you copied just that card to another page or a feed reader. The `<div class="project-header">` inside each article is a plain layout wrapper for the title + badge row, so `<div>` is correct there (no semantic meaning beyond "lay these two things out side by side").
+Each project card is wrapped in `<article>`, not `<div>`. An `<article>` represents *self-contained, independently distributable content* — a project description fits exactly: it has its own heading, its own copy, and would still make sense if you copied just that card to another page or a feed reader. The `<div class="project-header">` inside each article is a plain layout wrapper, so `<div>` is correct there (no semantic meaning beyond "lay these things out side by side").
 
-### CSS additions in `websystems.css`
+### Responsive 3-column grid
 
-A new `/*Project Cards*/` block was appended to the bottom of the stylesheet with these classes:
+The grid uses three CSS rules that work together — a default and two `@media` queries:
 
-- `.projects-grid` — two-column grid (`grid-template-columns: 1fr 1fr` means "two equal columns")
-- `.project-card` — white card with a soft light-blue border and a subtle shadow, reusing the existing palette
-- `.project-header` — flexbox row that puts the title on the left and the "Public" badge on the right
-- `.badge` — pill-shaped tag using the existing `#D2E2F1` / `#3b6ea5` palette
+```css
+.projects-grid {
+    grid-template-columns: repeat(3, 1fr);   /* desktop: 3 equal columns */
+}
+@media (max-width: 900px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }   /* tablet */
+}
+@media (max-width: 600px) {
+    .projects-grid { grid-template-columns: 1fr; }              /* phone */
+}
+```
+
+A `@media` query is a CSS rule that only applies when a condition is true — here, when the browser window is narrower than a certain width. So on a desktop the grid shows 3 columns; on a tablet (≤900px) it drops to 2; on a phone (≤600px) the cards stack into a single column. There are 4 projects, so the desktop layout shows 3 in row one and 1 in row two — that's expected.
+
+### CSS classes used
+
+- `.projects-grid` — the responsive grid container described above
+- `.project-card` — white card with a soft light-blue border and a subtle shadow, reusing the existing palette (looks especially clean now that it sits on a light-blue section background)
+- `.project-header` — flexbox row that holds the title (the badge has been removed)
 - `.project-lang` + `.lang-dot` — the small coloured circle next to each language name, with `.lang-php`, `.lang-html`, `.lang-python` providing the GitHub-style language colours
 
-Nothing existing was removed; all new styles sit at the end of the file and do not affect any other page.
+The earlier `.badge` rule was removed since the "Public" badges are gone.
 
 ## Note on inner `<div>`s
 
