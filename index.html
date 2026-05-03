@@ -7,72 +7,120 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="header">
-            <div class="container menu">
-                <a class="header_current" href="index.html">Home Page</a>
-                <a href="past.html">My Past</a>
-                <a href="future.html">My Future</a>
-                <a href="comments.html">Comments</a>
-            </div>
-        </div>
+        <header class="header">
+            <nav>
+                <ul class="container menu">
+                    <li><a class="header_current" href="index.html" aria-current="page">Home Page</a></li>
+                    <li><a href="past.html">My Past</a></li>
+                    <li><a href="future.html">My Future</a></li>
+                    <li><a href="comments.html">Comments</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <div class="main-block" id="main">
-            <div class="container">
-                <div class="half">
-                        <div>
-                            <h1>Jia Rastogi, <span>a first-year Uni Student</span></h1>
-                            <p>
-                                Hey!, I'm Jia Rastogi. I graduated from NBSC Manly Selective Campus last year, and have now started my degree at UTS in 2026. I'm doing a <b>Bachelor of AI</b> in the Faculty of Engineering and IT, where I can't wait to learn more about this growing industry! Over the past few years, I've developed skills for computing, but there are many other aspirations I have for the future. You can read more about those in the pages on this website, which you can view in the navigation menu above. 
-                            </p>
-                        </div>
-                        <!-- Portrait photo of me -->
-                        <img id="profile-img" src="images/Jia-Rastogi.png" title="Headshot of Jia Rastogi with a light pink background colour" alt="Headshot of Jia Rastogi with a light pink background colour">
+        <main>
+            <section class="hero" id="hero">
+                <div class="container">
+                    <div class="half">
+                            <div>
+                                <h1>Jia Rastogi, <span>a first-year Uni Student</span></h1>
+                                <p>
+                                    Hey!, I'm Jia Rastogi. I graduated from NBSC Manly Selective Campus last year, and have now started my degree at UTS in 2026. I'm doing a <strong>Bachelor of AI</strong> in the Faculty of Engineering and IT, where I can't wait to learn more about this growing industry! Over the past few years, I've developed skills for computing, but there are many other aspirations I have for the future. You can read more about those in the pages on this website, which you can view in the navigation menu above.
+                                </p>
+                            </div>
+                            <!-- Portrait photo of me -->
+                            <img id="profile-img" src="images/Jia-Rastogi.png" alt="Headshot of Jia Rastogi with a light pink background colour">
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="white-block">
-            <div class="container">
-                <h2>My Past</h2>
-                <p>Over the past few years, I have developed a strong interest in computing through using everyday technology such as phones, computers, games, and the internet, as well as more advanced tools like 3D printers, laser printers, and design software. My three main computing experiences have been:
-                </p>
-                <ol>
-                    <li>Web Design</li>
-                    <li>Using Software Applications</li>
-                    <li>Learning Python</li>
-                </ol>
-                <p>You can read more about my past experiences on the dedicated page linked below:
-                </p>
-                <a href="past.html">Read More About My Past</a>
-            </div>
-        </div>
+            </section>
 
-        <div class="grey-block">
-            <div class="container">
-                <h2>My Future</h2>
-                <p>In the future, I want to continue developing my computing skills, which will allow me to apply them in creative, practical, and professional ways. My past experiences have shown me that computing is a broad and valuable field that can be used across many industries for different purposes. In the future, I hope to create a business that helps people, while using computing skills to improve and systemise its processes. No matter the industry, computing can play an important role in improving efficiency, communication, and overall success.
-                </p>
-                <a href="future.html">Read More About My Future</a>
-            </div>
-        </div>
+            <section class="white-block">
+                <div class="container">
+                    <h2>My Past</h2>
+                    <p>Over the past few years, I have developed a strong interest in computing through using everyday technology such as phones, computers, games, and the internet, as well as more advanced tools like 3D printers, laser printers, and design software. My three main computing experiences have been:
+                    </p>
+                    <ol>
+                        <li>Web Design</li>
+                        <li>Using Software Applications</li>
+                        <li>Learning Python</li>
+                    </ol>
+                    <p>You can read more about my past experiences on the dedicated page linked below:
+                    </p>
+                    <a href="past.html">Read More About My Past</a>
+                </div>
+            </section>
 
-        <div class="white-block">
-            <div class="container">
-                <h2>Comments</h2>
-                <p>I've created the Comments Page for a complete explanation of how I have created this website including the overall structure, the internal structure, the css styles, graphic design elements and how the &lt;alt&gt; tag is used. I've explained this clearly using unordered lists, ordered lists, diagrams and tables to show the logic and execution of the HTML and CSS behind this website. I've aimed to break it down as much as possible to make it understandable by anyone. 
-                </p>
-                <a href="comments.html">Read the Comments Page</a>
-            </div>
-        </div>
+            <section class="grey-block" id="projects">
+                <div class="container">
+                    <h2>My Projects</h2>
+                    <p>Four projects I've built while learning to code. Each card links through to its repository on <a href="https://github.com/jiarastogi" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <div class="project-header">
+                                <h3><a href="https://github.com/jiarastogi/Popcorn-Picks" target="_blank" rel="noopener noreferrer">Popcorn-Picks</a></h3>
+                            </div>
+                            <p>Popcorn Picks is a movie discovery web app built with PHP, HTML, CSS, JavaScript and a movie database. Users can browse featured titles, search films by keyword, and view detailed movie pages.</p>
+                            <p class="project-lang"><span class="lang-dot lang-php"></span>PHP</p>
+                        </article>
 
-        <div class="footer">
+                        <article class="project-card">
+                            <div class="project-header">
+                                <h3><a href="https://github.com/jiarastogi/Study-Hive" target="_blank" rel="noopener noreferrer">Study-Hive</a></h3>
+                            </div>
+                            <p>Study Hive is a student-focused study and booking platform designed to make learning more organised, accessible and engaging. Built with HTML, CSS and JavaScript, it features login and signup pages.</p>
+                            <p class="project-lang"><span class="lang-dot lang-html"></span>HTML</p>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-header">
+                                <h3><a href="https://github.com/jiarastogi/Colour-Rush" target="_blank" rel="noopener noreferrer">Colour-Rush</a></h3>
+                            </div>
+                            <p>Colour Rush is a reaction-time game built with Python and Pygame. Players must wait for a rectangle to change colour and then press the spacebar as quickly as possible. The game tracks reaction speed.</p>
+                            <p class="project-lang"><span class="lang-dot lang-python"></span>Python</p>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-header">
+                                <h3><a href="https://github.com/jiarastogi/Computing-Profile" target="_blank" rel="noopener noreferrer">Computing-Profile</a></h3>
+                            </div>
+                            <p>This website is a personal portfolio that explores my past experiences, future aspirations, and the design decisions behind its creation. Built with HTML and CSS, it combines clear structure and consistent styling.</p>
+                            <p class="project-lang"><span class="lang-dot lang-html"></span>HTML</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="white-block">
+                <div class="container">
+                    <h2>My Future</h2>
+                    <p>In the future, I want to continue developing my computing skills, which will allow me to apply them in creative, practical, and professional ways. My past experiences have shown me that computing is a broad and valuable field that can be used across many industries for different purposes. In the future, I hope to create a business that helps people, while using computing skills to improve and systemise its processes. No matter the industry, computing can play an important role in improving efficiency, communication, and overall success.
+                    </p>
+                    <a href="future.html">Read More About My Future</a>
+                </div>
+            </section>
+
+            <section class="grey-block">
+                <div class="container">
+                    <h2>Comments</h2>
+                    <p>I've created the Comments Page for a complete explanation of how I have created this website including the overall structure, the internal structure, the css styles, graphic design elements and how the &lt;alt&gt; tag is used. I've explained this clearly using unordered lists, ordered lists, diagrams and tables to show the logic and execution of the HTML and CSS behind this website. I've aimed to break it down as much as possible to make it understandable by anyone.
+                    </p>
+                    <a href="comments.html">Read the Comments Page</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
             <div class="container">
                 <div class="half">
                     <p>Contact Details: jia.rastogi@student.uts.edu.au</p>
                     <p>© Jia Rastogi 2026</p>
+                    <label class="dark-toggle">
+                        Want dark mode?
+                        <input type="checkbox" id="dark-toggle">
+                    </label>
                 </div>
             </div>
-        </div>
-                        
+        </footer>
+
     </body>
 </html>
